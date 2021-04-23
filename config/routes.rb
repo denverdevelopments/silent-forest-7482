@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
 root 'ingredients#show'
 
-resources :chefs, only: [:show] do
+resources :chefs, only: [:show]
+resources :ingredients, only: [:show] do
   resources :dishes, only: [:destroy]
 end
-resources :ingredients, only: [:show]
 
 end

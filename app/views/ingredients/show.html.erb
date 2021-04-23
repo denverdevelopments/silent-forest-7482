@@ -1,3 +1,17 @@
-<h2><%= @item.name %></h2>
-<h4><%= @item.description %><br/>$<%= @item.unit_price %> per unit</h4>
-<h4><%= link_to "Edit Item", "/items/#{@item.id}/edit" %></h4>
+<h2><%= @ingredient.name %></h2>
+<h3><%= @ingredient.calories %> calories</h3>
+
+<section id="dish_names">
+<h4>&emsp;used in these dishes --</h4>
+<% @dishes.each do |dish| %>
+<p><%=  dish.name %>:  <%= dish.description %></p>
+<p><%=  button_to "Delete", "/ingredients/#{@ingredient.id}/dishes/#{dish.id}", method: :delete %></p>
+<% end %>
+</section>
+
+<section id="chef_names">
+<h4>&emsp;these chefs use it --</h4>
+<% @chefs.each do |chef| %>
+  <p><%=  chef %> </p>
+<% end %>
+</section>

@@ -1,0 +1,6 @@
+<h2><%= @chef.name %></h2>
+
+<h4>Top Three Ingredients</h4>
+<% @three_best.each do |ingredient| %>
+  <p><%=  ingredient.name %> </p>
+<% end %>
