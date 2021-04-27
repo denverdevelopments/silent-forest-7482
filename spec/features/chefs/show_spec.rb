@@ -40,12 +40,6 @@ RSpec.describe 'chef show page' do
       within("#dish-#{@coucous1.id}") do
         expect(page).to have_content("#{@coucous1.name}")
         expect(page).to have_content("#{@coucous1.description}")
-        expect(page).to have_content("#{@salt_1.name}")
-        expect(page).to have_content("#{@salt_1.calories}")
-        expect(page).to have_content("#{@butter_2.name}")
-        expect(page).to have_content("#{@butter_2.calories}")
-        expect(page).to have_content("#{@grain_4.name}")
-        expect(page).to have_content("#{@grain_4.calories}")
       end
 
       within("#dish-#{@lamb2.id}") do

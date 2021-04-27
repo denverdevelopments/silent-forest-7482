@@ -1,0 +1,16 @@
+<section id="chef_dishes">
+<h1><%= @chef.name %></h1>
+
+  <% @dishes.each do |dish| %>
+    <section id="dish-<%= dish.id %>">
+      <p><%= dish.name %></p>
+      <p>&emsp;<%= dish.description %></p>
+      <%= button_to "Remove Dish", "/chefs/#{@chef.id}", method: :delete %><br><br/>
+      <% dish.ingredients.each do |ing| %>
+        <p><%= ing.name %>, <%= ing.calories %> cal</p>
+      <% end %><br/>
+    <% end %>
+
+
+
+</section>
